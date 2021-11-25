@@ -5,24 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css";>
 </head>
 <body>
-    <header>
-        Minha Lista de Tarefas
+    <main>
+      <header>
+        <h1>Minha Lista de Tarefas</h1>
        <p id='funcionamento'>Clique duas vezes em um item para marcá-lo como completo</p>
     </header>
-    <input id='texto-tarefa' type="text">
-    <button id='criar-tarefa'>Adicionar</button>
-    <ol id='lista-tarefas'>
-    </ol>    
-    <button id='salvar-tarefas'>Salvar Tarefas</button>
-    <button id='mover-cima'>/\</button>
-    <button id='mover-baixo'>\/</button>
-    <button id='remover-selecionado'>Apagar Item</button>
-    <button id='remover-finalizados'>Remover finalizados</button>   
-    <button id='apaga-tudo'>Apagar tudo</button>
+    <div id='taskInput'>
+        <input id='texto-tarefa' type="text" placeholder="Digite sua tarefa"> 
+        <div class="tooltip">
+            <ion-icon id='criar-tarefa' class="btn" name="add-outline"></ion-icon>
+            <span class="tooltiptext">Adicionar Item</span>
+        </div>          
+    </div>
+       
+    <div>
+        <div class="tooltip">
+           <ion-icon id='salvar-tarefas' class="btn" name="save-outline"></ion-icon> 
+           <span class="tooltiptext">Salvar Lista</span>
+        </div>
+        <div class="tooltip">
+            <ion-icon id='mover-cima' class="btn" name="arrow-up-outline"></ion-icon>
+            <span class="tooltiptext">Mover para Cima</span>
+        </div>  
+        <div class="tooltip">
+            <ion-icon id='mover-baixo' class="btn" name="arrow-down-outline"></ion-icon>
+            <span class="tooltiptext">Mover para Baixo</span>
+        </div>
+        <div class="tooltip">
+            <ion-icon id='remover-selecionado'class="btn" name="close-outline"></ion-icon>
+            <span class="tooltiptext">Apagar Item</span>
+        </div>
+        <div class="tooltip">
+            <ion-icon id='remover-finalizados' class="btn" name="remove-circle-outline"></ion-icon>
+            <span class="tooltiptext">Apagar Riscados</span>
+        </div>
+        <div class="tooltip">
+            <ion-icon id='apaga-tudo' class="btn" name="trash-outline"></ion-icon>
+            <span class="tooltiptext">Apagar Tudo</span>
+        </div>      
+    </div>
+    <div>
+       <ol id='lista-tarefas'></ol>     
+    </div>
+    </main>
 
+    <footer>Criado por Vinicius Pacheco Franco, 2021.</footer>  
+    
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 <script src='script.js'></script>
 </body>
 </html>
