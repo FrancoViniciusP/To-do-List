@@ -3,10 +3,14 @@ const taskList = document.getElementById('lista-tarefas');
 function addTask() {
   const taskWrited = document.getElementById('texto-tarefa').value;
   const newTask = document.createElement('li');
-  newTask.innerText = taskWrited;
-  newTask.classList.add('task');
-  taskList.appendChild(newTask);
-  document.getElementById('texto-tarefa').value = '';
+  if (taskWrited === '') {
+    alert('Escreva uma tarefa!');
+  } else {
+     newTask.innerText = taskWrited;
+     newTask.classList.add('task');
+     taskList.appendChild(newTask);
+     document.getElementById('texto-tarefa').value = '';
+  }  
 }
 
 function changeBackground(event) {
