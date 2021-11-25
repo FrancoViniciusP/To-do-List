@@ -90,6 +90,7 @@ function moveDown() {
 }
 
 loadTasks();
+
 const button = document.getElementById('criar-tarefa');
 button.addEventListener('click', addTask);
 document.addEventListener('keypress', function(e){
@@ -97,7 +98,6 @@ document.addEventListener('keypress', function(e){
      addTask();
   }
 }, false);
-
 
 
 const cleanerAll = document.getElementById('apaga-tudo');
