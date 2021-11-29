@@ -3,10 +3,14 @@ const taskList = document.getElementById('lista-tarefas');
 function addTask() {
   const taskWrited = document.getElementById('texto-tarefa').value;
   const newTask = document.createElement('li');
-  newTask.innerText = taskWrited;
-  newTask.classList.add('task');
-  taskList.appendChild(newTask);
-  document.getElementById('texto-tarefa').value = '';
+  if (taskWrited === '') {
+    alert('Escreva uma tarefa!');
+  } else {
+     newTask.innerText = taskWrited;
+     newTask.classList.add('task');
+     taskList.appendChild(newTask);
+     document.getElementById('texto-tarefa').value = '';
+  }  
 }
 
 function changeBackground(event) {
@@ -63,8 +67,11 @@ function moveUP() {
     if (allTasks[i].classList.contains('background') && (i - 1) >= 0) {
       const taskMoved = allTasks[i].innerText;
       const taskUpper = allTasks[(i - 1)].innerText;
-      allTasks[(i - 1)].innerText = taskMoved;
+      allTasks[(i - 1)].innerText = taskMoved;      
       allTasks[i].innerText = taskUpper;
+      
+      allTasks[i].classList;
+
       allTasks[i - 1].classList.add('background');
       allTasks[i].classList.remove('background');
     }
@@ -87,8 +94,16 @@ function moveDown() {
 }
 
 loadTasks();
+
 const button = document.getElementById('criar-tarefa');
 button.addEventListener('click', addTask);
+document.addEventListener('keypress', function(e){
+  if(e.which == 13){
+     addTask();
+  }
+}, false);
+
+
 const cleanerAll = document.getElementById('apaga-tudo');
 const cleanerFinished = document.getElementById('remover-finalizados');
 const savingTasks = document.getElementById('salvar-tarefas');
